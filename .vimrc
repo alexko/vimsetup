@@ -101,6 +101,8 @@ autocmd! bufwritepost vimrc source ~/vim_local/vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Use 256 colors
+set t_Co=256
 "Enable syntax hl
 syntax enable
 
