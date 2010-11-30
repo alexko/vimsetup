@@ -878,4 +878,5 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags' 
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+
