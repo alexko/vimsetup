@@ -109,7 +109,7 @@ if has("mac")
   set gfn=Bitstream\ Vera\ Sans\ Mono:h14
   set nomacatsui
   set termencoding=macroman
-elseif MySys() == "linux"
+elseif has("linux")
   set gfn=Monospace\ 11
 endif
 
@@ -284,9 +284,9 @@ imap <D-0> <esc>0i
 
 " Shortcuts for moving between tabs. 
 " Alt-j to move to the tab to the left 
-#noremap <A-j> gT 
+noremap <A-j> gT
 " Alt-k to move to the tab to the right 
-#noremap <A-k> gt
+noremap <A-k> gt
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -829,7 +829,7 @@ map <silent> <leader><cr> :noh<cr>
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 map <leader>c :botright cw 10<cr>
-#map <c-u> <c-l><c-j>:q<cr>:botright cw 10<cr>
+map <c-u> <c-l><c-j>:q<cr>:botright cw 10<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
