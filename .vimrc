@@ -33,7 +33,7 @@
 "    Yank ring
 "    File explorer
 "    Minibuffer
-"    Tag list (ctags) - not used
+"    Tag list (ctags)
 "    LaTeX Suite things
 " Filetype generic
 "    Todo
@@ -75,6 +75,7 @@ set history=400
 "Enable filetype plugin
 filetype plugin on
 filetype indent on
+set ofu=syntaxcomplete#Complete
 
 "Set to auto read when a file is changed from the outside
 set autoread
@@ -91,11 +92,11 @@ nmap <leader>w :w!<cr>
 nmap <leader>f :find<cr>
 
 "Fast reloading of the .vimrc
-map <leader>s :source ~/vimsetup/vimrc<cr>
+map <leader>s :source ~/vimsetup/.vimrc<cr>
 "Fast editing of .vimrc
-map <leader>e :e! ~/vimsetup/vimrc<cr>
+map <leader>e :e! ~/vimsetup/.vimrc<cr>
 "When .vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/vimsetup/vimrc
+autocmd! bufwritepost .vimrc source ~/vimsetup/.vimrc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,6 +104,7 @@ autocmd! bufwritepost vimrc source ~/vimsetup/vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Use 256 colors
 set t_Co=256
+
 "Enable syntax hl
 syntax enable
 
@@ -159,7 +161,7 @@ nmap <leader>fu :se ff=unix<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM userinterface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Set 7 lines to the curors - when moving vertical..
+"Set 7 lines to the cursors - when moving vertical..
 set so=7
 
 "Turn on WiLd menu
@@ -168,8 +170,8 @@ set wildmenu
 "Always show current position
 set ruler
 
-"The commandbar is 2 high
-set cmdheight=2
+"The commandbar is 1 high
+set cmdheight=1
 
 "Show line number
 set nu
@@ -260,7 +262,8 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 "Actually, the tab does not switch buffers, but my arrows
-"Bclose function ca be found in "Buffer related" section
+map <tab> :tabnext<cr>
+"Bclose function can be found in "Buffer related" section
 map <leader>bd :Bclose<cr>
 "map <down> <leader>bd
 "Use the arrows to something usefull
@@ -326,10 +329,7 @@ imap <d-l> <esc>:exec "normal f" . leavechar<cr>a
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Abbrevs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"My information
 iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-iab xname Amir Salihefendic
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing mappings etc.
@@ -461,7 +461,10 @@ set noswapfile
 "Enable folding, I find it very useful
 set nofen
 set fdl=0
-
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent loadview
+au BufWinLeave .* mkview
+au BufWinEnter .* silent loadview
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text options
@@ -555,13 +558,15 @@ map <leader>s? z=
 
 
    """"""""""""""""""""""""""""""
-   " Tag list (ctags) - not used
+   " Tag list (ctags)
    """"""""""""""""""""""""""""""
-   "let Tlist_Ctags_Cmd = "/sw/bin/ctags-exuberant"
+   let Tlist_Ctags_Cmd = "/usr/bin/ctags"
    "let Tlist_Sort_Type = "name"
    "let Tlist_Show_Menu = 1
    "map <leader>t :Tlist<cr>
-
+   let Tlist_WinWidth = 50
+   map <F4> :TlistToggle<cr>
+   map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
    """"""""""""""""""""""""""""""
    " LaTeX Suite things
@@ -767,7 +772,7 @@ map <leader>s? z=
    """"""""""""""""""""""""""""""
    " SVN section
    """""""""""""""""""""""""""""""
-   map <F8> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
+   "map <F8> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
 
 
 """"""""""""""""""""""""""""""
@@ -878,5 +883,5 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
 
