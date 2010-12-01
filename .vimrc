@@ -91,11 +91,11 @@ nmap <leader>w :w!<cr>
 nmap <leader>f :find<cr>
 
 "Fast reloading of the .vimrc
-map <leader>s :source ~/vim_local/vimrc<cr>
+map <leader>s :source ~/vimsetup/vimrc<cr>
 "Fast editing of .vimrc
-map <leader>e :e! ~/vim_local/vimrc<cr>
+map <leader>e :e! ~/vimsetup/vimrc<cr>
 "When .vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/vim_local/vimrc
+autocmd! bufwritepost vimrc source ~/vimsetup/vimrc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -586,7 +586,7 @@ map <leader>s? z=
    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
    " Todo
    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-   au BufNewFile,BufRead *.todo so ~/vim_local/syntax/amido.vim
+   au BufNewFile,BufRead *.todo so ~/vimsetup/syntax/amido.vim
 
 
    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -636,9 +636,9 @@ map <leader>s? z=
    " Python section
    """"""""""""""""""""""""""""""
    "Run the current buffer in python - ie. on leader+space
-   au FileType python so ~/vim_local/syntax/python.vim
+   au FileType python so ~/vimsetup/syntax/python.vim
    autocmd FileType python map <buffer> <leader><space> :w!<cr>:!python %<cr>
-   autocmd FileType python so ~/vim_local/plugin/python_fold.vim
+   autocmd FileType python so ~/vimsetup/plugin/python_fold.vim
 
    "Set some bindings up for 'compile' of python
    autocmd FileType python set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
@@ -680,7 +680,7 @@ map <leader>s? z=
    au FileType java inoremap <buffer> <C-t> System.out.println();<esc>hi
 
    "Java comments
-   autocmd FileType java source ~/vim_local/macros/jcommenter.vim
+   autocmd FileType java source ~/vimsetup/macros/jcommenter.vim
    autocmd FileType java let b:jcommenter_class_author='Amir Salihefendic (amix@amix.dk)'
    autocmd FileType java let b:jcommenter_file_author='Amir Salihefendic (amix@amix.dk)'
    autocmd FileType java map <buffer> <F2> :call JCommentWriter()<cr>
@@ -714,7 +714,7 @@ map <leader>s? z=
    """"""""""""""""""""""""""""""
    " JavaScript section
    """""""""""""""""""""""""""""""
-   au FileType javascript so ~/vim_local/syntax/javascript.vim
+   au FileType javascript so ~/vimsetup/syntax/javascript.vim
    function! JavaScriptFold()
      setl foldmethod=syntax
      setl foldlevelstart=1
