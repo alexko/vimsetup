@@ -211,7 +211,7 @@ set hlsearch
   " Statusline
   """"""""""""""""""""""""""""""
   "Always hide the statusline
-  set laststatus=2
+  set laststatus=1
 
   function! CurDir()
      let curdir = substitute(getcwd(), '/home/.*/', "~/", "g")
@@ -264,8 +264,8 @@ map <C-l> <C-W>l
 map <leader>bd :Bclose<cr>
 "map <down> <leader>bd
 "Use the arrows to something usefull
-map <right> :tabnext<cr>
-map <left> :tabprevious<cr>
+"map <right> :tabnext<cr>
+"map <left> :tabprevious<cr>
 
 "Tab configuration
 map <leader>tn :tabnew %<cr>
