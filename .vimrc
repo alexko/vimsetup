@@ -214,7 +214,7 @@ set hlsearch
   set laststatus=2
 
   function! CurDir()
-     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+     let curdir = substitute(getcwd(), '/home/.*/', "~/", "g")
      return curdir
   endfunction
 
