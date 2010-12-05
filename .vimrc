@@ -81,7 +81,14 @@ set ofu=syntaxcomplete#Complete
 set autoread
 
 "Have the mouse enabled all the time:
-set mouse=a
+"set mouse=a
+set mouse=nv
+
+"Set up bindings for cut/paste
+" http://vim.wikia.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip
+vmap <F5> :!xclip -f -sel clip<CR>
+map <F6> :-1r !xclip -o -sel clip<CR>
+set pastetoggle=<F11>
 
 "Set mapleader
 let mapleader = ","
