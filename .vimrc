@@ -595,6 +595,18 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetype generic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+   function! BufNewFile_hdr(prg)
+   0put = '#!/usr/bin/env '.a:prg
+   "1put = '#-*- coding: utf-8 -*-'
+   "2put = '# Filename: '.expand('<afile>')
+   $put = ''
+   normal G
+   endfunction
+
+   autocmd BufNewFile *.py call BufNewFile_hdr('python')
+   autocmd BufNewFile *.lua call BufNewFile_hdr('lua')
+   autocmd BufNewFile *.awk call BufNewFile_hdr('awk')
+
    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
    " Todo
    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
