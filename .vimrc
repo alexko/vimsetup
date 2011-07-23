@@ -97,6 +97,7 @@ let g:mapleader = ","
 "Fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>f :find<cr>
+cmap w!! %!sudo tee >/dev/null %
 
 "Fast reloading of the .vimrc
 map <leader>s :source ~/vimsetup/.vimrc<cr>
