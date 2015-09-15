@@ -609,12 +609,6 @@ map <leader>s? z=
    autocmd BufNewFile *.awk call BufNewFile_hdr('awk')
 
    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-   " Todo
-   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-   au BufNewFile,BufRead *.todo so ~/vimsetup/syntax/amido.vim
-
-
-   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
    " IO
    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
    autocmd BufNewFile,BufRead *.io source ~/.vim/ftplugin/io.vim 
@@ -703,12 +697,6 @@ map <leader>s? z=
    " Java section
    """""""""""""""""""""""""""""""
    au FileType java inoremap <buffer> <C-t> System.out.println();<esc>hi
-
-   "Java comments
-   autocmd FileType java source ~/vimsetup/macros/jcommenter.vim
-   autocmd FileType java let b:jcommenter_class_author='Amir Salihefendic (amix@amix.dk)'
-   autocmd FileType java let b:jcommenter_file_author='Amir Salihefendic (amix@amix.dk)'
-   autocmd FileType java map <buffer> <F2> :call JCommentWriter()<cr>
 
    "Abbr'z
    autocmd FileType java inoremap <buffer> $pr private
