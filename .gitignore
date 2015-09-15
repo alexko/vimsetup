@@ -12,7 +12,6 @@ syntax: glob
 *.classpath
 *.project
 *.settings
-
-
 *io.vim.swp
 *.session
+view/*
