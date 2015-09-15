@@ -661,9 +661,9 @@ map <leader>s? z=
    " Python section
    """"""""""""""""""""""""""""""
    "Run the current buffer in python - ie. on leader+space
-   au FileType python so ~/vimsetup/syntax/python.vim
+   au FileType python so ~/.vim/syntax/python.vim
    autocmd FileType python map <buffer> <leader><space> :w!<cr>:!python %<cr>
-   autocmd FileType python so ~/vimsetup/plugin/python_fold.vim
+   autocmd FileType python so ~/.vim/plugin/python_fold.vim
 
    "Set some bindings up for 'compile' of python
    autocmd FileType python set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
@@ -739,7 +739,7 @@ map <leader>s? z=
    """"""""""""""""""""""""""""""
    " JavaScript section
    """""""""""""""""""""""""""""""
-   au FileType javascript so ~/vimsetup/syntax/javascript.vim
+   au FileType javascript so ~/.vim/syntax/javascript.vim
    function! JavaScriptFold()
      setl foldmethod=syntax
      setl foldlevelstart=1
