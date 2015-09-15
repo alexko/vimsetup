@@ -100,11 +100,11 @@ nmap <leader>f :find<cr>
 cmap w!! %!sudo tee >/dev/null %
 
 "Fast reloading of the .vimrc
-map <leader>s :source ~/vimsetup/.vimrc<cr>
+map <leader>s :source ~/.vim/.vimrc<cr>
 "Fast editing of .vimrc
-map <leader>e :e! ~/vimsetup/.vimrc<cr>
+map <leader>e :e! ~/.vim/.vimrc<cr>
 "When .vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/vimsetup/.vimrc
+autocmd! bufwritepost .vimrc source ~/.vim/.vimrc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
